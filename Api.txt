@@ -1,0 +1,68 @@
+
+What is Stream API in Java?
+
+
+The Stream API (introduced in Java 8) provides a powerful and expressive way to work with sequences of data (such as collections, arrays, or input sources) in a functional programming style. It allows operations such as filtering, mapping, and reducing collections of objects in a clean and readable way. Unlike traditional iteration, streams can be processed in parallel, which improves performance for large datasets.
+
+Streams do not store data. Instead, they carry out operations such as transformations (e.g., map or filter) and then deliver results through terminal operations (e.g., forEach or collect).
+==========================================================
+
+
+
+waht are Methods of Stream API?
+Stream API operations are divided into intermediate and terminal operations.
+================
+Intermediate Operations:
+
+
+These operations return a new stream and are lazy (they don't execute until a terminal operation is called). Some common intermediate operations:
+
+filter(Predicate<T> predicate): Filters elements based on a condition.
+map(Function<T, R> mapper): Transforms elements from one form to another.
+flatMap(Function<T, Stream<R>> mapper): Flattens nested structures into a single stream.
+sorted() / sorted(Comparator<? super T>): Sorts the elements in natural order or based on a comparator.
+distinct(): Removes duplicate elements from the stream.
+limit(long maxSize): Limits the number of elements.
+skip(long n): Skips the first n elements.
+
+
+===================
+
+Terminal Operations:
+These operations trigger the actual processing of the stream and produce a result.
+
+forEach(Consumer<? super T> action): Iterates over the elements and performs an action.
+collect(Collector<? super T, A, R> collector): Collects elements into a collection (e.g., List, Set).
+reduce(BinaryOperator<T> accumulator): Reduces the stream to a single value (e.g., summing values).
+count(): Returns the number of elements in the stream.
+findFirst() / findAny(): Returns the first or any element from the stream.
+anyMatch() / allMatch() / noneMatch(): Checks if any, all, or none of the elements match a given predicate.
+
+
+
+========================================================
+
+
+What is map in Stream API?
+The map() method in the Stream API is used to transform each element of the stream by applying a function to it. It takes a Function<T, R> as a parameter, which is applied to each element, and it produces a new stream with the transformed elements.
+
+
+=============================================================
+What is flatMap in Stream API?
+The flatMap() method is used when you have a stream of collections (or nested structures) and you want to flatten it into a single stream of elements. It takes a function that returns a stream for each element and then merges these streams into a single one.
+
+
+
+=====================================
+
+
+What is filter in Stream API?
+The filter() method is used to select elements from a stream that meet a certain condition. It takes a Predicate<T> as a parameter, which returns true or false for each element, and only elements that return true are retained in the output stream.
+
+
+=========================================================
+
+
+Difference Between map and flatMap:
+map(): Transforms each element of the stream to another object. It returns a stream where each element has been transformed individually.
+flatMap(): Similar to map(), but is used when the transformation results in another stream or collection. It flattens the resulting streams/collections into a single stream.
