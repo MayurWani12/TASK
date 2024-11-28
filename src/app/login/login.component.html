@@ -1,0 +1,28 @@
+<div class="div">
+<div class="home-container">
+
+
+<div class="form">
+<label>Emailid</label>
+<input type="text" [(ngModel)]="user.email" name="email" placeholder="Please enter email">
+
+<label>
+    Password
+</label>
+<input type="password" [(ngModel)]="user.password" name="password" placeholder="enter the password">
+
+
+<button  (click)="log()" >Log In</button>
+
+<br>
+<p  routerLink="/signup" >If No Account? Signup</p>
+
+
+
+</div>
+
+
+
+</div>
+</div>
+
